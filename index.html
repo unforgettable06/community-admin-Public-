@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绿邻社区 · 后台管理系统</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 登录视图 -->
+  <div id="loginView" class="login-wrap">
+    <div class="login-card">
+      <div class="login-logo">🌿</div>
+      <h1 class="login-title">绿邻社区</h1>
+      <p class="login-sub">环保社区后台管理系统</p>
+      <div class="login-form">
+        <div class="field">
+          <label>管理员账号</label>
+          <input id="adminAccount" class="ipt" value="admin" placeholder="请输入账号" />
+        </div>
+        <div class="field">
+          <label>密码</label>
+          <input id="adminPassword" class="ipt" type="password" value="123456" placeholder="请输入密码" />
+        </div>
+        <button id="loginBtn" class="btn btn-primary btn-block">登 录</button>
+        <p class="login-tip">演示账号：admin / 123456</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主视图 -->
+  <div id="appView" class="layout" style="display:none">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+      <div class="side-brand">🌿 绿邻社区</div>
+      <nav class="side-nav">
+        <div class="nav-item active" data-view="dashboard">📊 仪表盘</div>
+        <div class="nav-item" data-view="posts">📝 帖子管理</div>
+        <div class="nav-item" data-view="market">♻ 闲置管理</div>
+        <div class="nav-item" data-view="activities">🌱 活动管理</div>
+        <div class="nav-item" data-view="users">👥 用户管理</div>
+        <div class="nav-item" data-view="points">⭐ 积分记录</div>
+      </nav>
+      <div class="side-foot">
+        <div class="admin-info">
+          <div class="admin-avatar">管</div>
+          <div>
+            <div class="admin-name">管理员</div>
+            <div class="admin-role">超级管理员</div>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn btn-ghost btn-block">退出登录</button>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main">
+      <header class="topbar">
+        <h2 id="pageTitle">仪表盘</h2>
+        <div class="topbar-right">
+          <span id="todayStr" class="today"></span>
+        </div>
+      </header>
+      <div id="content" class="content"></div>
+    </main>
+  </div>
+
+  <!-- 弹窗 -->
+  <div id="modalMask" class="modal-mask" style="display:none">
+    <div id="modalBox" class="modal-box"></div>
+  </div>
+
+  <!-- 轻提示 -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
